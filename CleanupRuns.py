@@ -18,8 +18,7 @@ runs_directory = Configs.test_filesystem_path + '/runs'
 
 subprocess.check_call(['zfs', 'destroy', '-r', runs_directory])
 
-subprocess.check_call(['zfs', 'create', 
-    Configs.test_filesystem_path + '/runs'])
+subprocess.check_call(['zfs', 'create',
+                      Configs.test_filesystem_path + '/runs'])
 
 Pid.destroy_pid_file()
-
