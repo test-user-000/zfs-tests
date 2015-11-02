@@ -13,6 +13,7 @@ import time
 import Configs
 import subprocess
 
+
 class ResultsCollector():
 
     def log(self, message):
@@ -24,7 +25,7 @@ class ResultsCollector():
         # take the final part of its name (after the final /) and be given a
         # unique name for the log file.
         fs_name = filesystem[filesystem.rfind('/'):]
-        self.logfile = Configs.results_directory +  fs_name
+        self.logfile = Configs.results_directory + fs_name
 
     def gather_start_results(self):
         self.log_file_handle = open(self.logfile, 'a')
@@ -55,4 +56,3 @@ class ResultsCollector():
         self.log(subprocess.check_output(['zpool', 'iostat', '-v']))
         self.log("zpool status:")
         self.log(subprocess.check_output(['zpool', 'status']))
-
